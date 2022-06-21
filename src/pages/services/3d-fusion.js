@@ -27,7 +27,23 @@ const Flex = styled.div`
   ul {
     li {
       font-size: var(--fs-2);
+
+      & > * + * {
+        margin-left: 5px;
+      }
     }
+  }
+
+  & > * + * {
+    margin-left: 2em;
+
+    @media screen and (max-width: 52.5em) {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 52.5em) {
+    flex-direction: column;
   }
 `
 

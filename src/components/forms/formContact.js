@@ -83,8 +83,10 @@ export default function FormContact() {
                 />
               </div>
               <div className="spacing-sm">
-                <Label htmlFor="subject">Upload Your Part Files:</Label>
-                <input type="file" name="file" id="file" multiple />
+                <Label htmlFor="subject">
+                  Upload Your Part File: (max number of files: 1)
+                </Label>
+                <input type="file" name="file" id="file" />
               </div>
               <Submit type="submit" id="submit" value="send" />
             </form>

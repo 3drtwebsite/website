@@ -62,7 +62,7 @@ const NavList = styled.ul`
     display: ${({ nav }) => (nav ? "flex" : "none")};
     align-items: center;
     position: absolute;
-    top: 82px;
+    top: 108px;
 
     left: 0;
     right: 0;

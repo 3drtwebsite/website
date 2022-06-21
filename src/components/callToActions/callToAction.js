@@ -23,10 +23,6 @@ const TextOverlay = styled.div`
   color: var(--txt-light);
   text-shadow: -3px 3px 3px #000000;
   padding: 2em;
-
-  p {
-    width: 100ch;
-  }
 `
 
 export default function CallToAction() {
