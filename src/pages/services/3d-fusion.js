@@ -72,6 +72,7 @@ export default function Fusion() {
         breadCrumb3="3D Fusion"
         img={BannerImg}
         buttonText="get a quote"
+        to="/contact"
       />
       <Section>
         <Container className="spacing">
@@ -123,8 +124,8 @@ export default function Fusion() {
       </Section>
       <Process />
       <ProductionBenefits img={ProductionBenefitsImg} />
-      <CallToAction img={CtaBg} />
       <Summary2 />
+      <CallToAction img={CtaBg} />
     </Layout>
   )
 }

@@ -56,14 +56,14 @@ export default function Printing() {
         imgAlt="3D printing calgary"
       />
       <OnDemandPrinting />
-      <CallToAction img={CtaImg} />
       <Technologies />
       <Commercial />
-      <CallToAction img={CtaImg} />
+
       <Materials />
       <Design />
       <Process />
       <Accelerate />
+      <CallToAction img={CtaImg} />
       {/* <Industries /> */}
     </Layout>
   )

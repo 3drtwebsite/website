@@ -48,9 +48,9 @@ export default function ServicesFull() {
               <Text className="spacing">
                 <h3 className="caps bold title">3D printing</h3>
                 <p className="bold">
-                  We offer 24/7 rapid prototyping and digital production
-                  capabilities. We are ready to meet your unique manufacturing
-                  challenges!
+                  We offer a host of 3D Printing, Rapid Prototyping, and Digital
+                  Production capabilities that are ready to meet your unique
+                  manufacturing challenges!
                 </p>
                 <ButtonPrimary to="/services/3d-printing">
                   learn more &#8594;

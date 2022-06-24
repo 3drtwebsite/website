@@ -31,27 +31,24 @@ export default function Design() {
               calgary
             </h2>
             <p className="">
-              We offer a variety of digital design and production services in
-              Calgary, including:
+              Digital design goes hand in hand with 3D printing. You can't print
+              without a digital model and the geometry of that model, although
+              unlimited in complexity and potential, has to be designed in such
+              a way as to take advantage of the benefits of 3D Printing without
+              inadvertently incorporating its main drawbacks, such as support,
+              excessive time/cost to print, etc. We offer expertise in a variety
+              of digital design and production services, including:
             </p>
             <List>
-              <li>Parametric (CAD) modeling</li>
-              <li>Design for additive manufacturing (DFAM)</li>
-              <li>Hybrid additive manufacturing</li>
-              <li>3D production consulting</li>
+              <li>Design for Additive Manufacturing (DFAM)</li>
+              <li>Hybrid Additive Manufacturing</li>
+              <li>3D Production Consulting</li>
               <li>
                 <ButtonInline to="/services/3d-fusion">
                   3D Fusion Manufacturing
                 </ButtonInline>
               </li>
             </List>
-            <p>
-              Digital design goes hand in hand with 3D printing. You can't print
-              without a digital model and the geometry of that model, although
-              unlimited in complexity and potential, has to made in such a way
-              as to take advantage of the benefits of 3D Printing without
-              inadvertely incorporating it's main drawbacks (eg. supports).
-            </p>
           </div>
           <StaticImage
             className="stretch"

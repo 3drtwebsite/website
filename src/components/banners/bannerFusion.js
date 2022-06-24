@@ -82,7 +82,7 @@ export default function BannerFusion(props) {
               </BreadcrumbLink>
             </Breadcrumb>
             <hr />
-            <p className="title bold">3D fusion</p>
+            <p className="title bold">3D fusion manufacturing</p>
             <p className="body--large">
               3D Fusion is a novel additive manufacturing method used to improve
               the isotropic strength, quality, and structural consistency of
