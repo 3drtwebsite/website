@@ -5,6 +5,7 @@ module.exports = {
     titleTemplate: "%s · 3'D Revolution Technologies",
     description: "We provide 3D printing services to help you Make it Real! ",
     url: "https://www.3drtinc.com", // No trailing slash allowed!
+    siteUrl: `https://www.3drtinc.com`,
     image: "/images/logo.svg", // Path to your image you placed in the 'static' folder
     twitterUsername: "",
   },
