@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-// import { ButtonPrimary, ButtonSecondaryLight } from "../buttons"
-// import { Actions } from "../layoutComponents"
-// import { StaticImage } from "gatsby-plugin-image"
+import { ButtonPrimary, ButtonSecondaryLight } from "../buttons"
+import { Actions } from "../layoutComponents"
+import { StaticImage } from "gatsby-plugin-image"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Carousel } from "react-bootstrap"
-// import { Autoplay } from "swiper"
+import { Autoplay } from "swiper"
 
 const Wrapper = styled.div`
   padding-bottom: 4em;

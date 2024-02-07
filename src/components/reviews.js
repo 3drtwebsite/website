@@ -1,8 +1,7 @@
 import React from "react"
-// import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-// import { Section, Container, Flex, GridAuto } from "./layoutComponents"
-import { Section, Container, Flex} from "./layoutComponents"
+import { Section, Container, Flex, GridAuto } from "./layoutComponents"
 
 const ReviewCard = styled.div`
   display: flex;

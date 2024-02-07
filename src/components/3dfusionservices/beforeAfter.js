@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
-// import { Section, Container } from "../layoutComponents"
+import { Section, Container } from "../layoutComponents"
 
 const device = {
   md: "48em",
