@@ -23,7 +23,8 @@ const ReviewCard = styled.div`
     text-shadow: -3px 3px 3px #fff;
   }
   &:nth-child(2) {
-    background: url("../images/review-2.png");
+    
+    background: url("../images/review-2.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
