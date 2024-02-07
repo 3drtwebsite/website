@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Section, Container, GridAuto } from "../layoutComponents"
 import { ButtonUnderline } from "../buttons"
 
-import ItemImg1 from "../../images/3d-fusion-elevates-3d-parts.jpg"
+import ItemImg1 from "../../images/3d-fusion-elevates-3d-parts.jpeg"
 import ItemImg2 from "../../images/3d-printing-who-we-help.jpg"
 import ItemImg3 from "../../images/3d-printing-finishing-touches.jpg"
 import ItemImg4 from "../../images/unlocking-3d-printing-potential.jpg"
