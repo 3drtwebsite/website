@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { Container } from "../layoutComponents"
-import { IoMdArrowDropdown } from "react-icons/io"
+// import { IoMdArrowDropdown } from "react-icons/io"
 
 import Logo from "../../images/logo.svg"
 
