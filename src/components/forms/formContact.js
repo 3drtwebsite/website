@@ -1,10 +1,10 @@
 import React from "react"
-// import styled from "styled-components"
+import styled from "styled-components"
 import { Helmet } from "react-helmet"
-// import { Script } from "gatsby"
+import { Script } from "gatsby"
 
 import { Section, Container, Flex, FlexMobileOpp } from "../layoutComponents"
-// import { Label, Input, TextArea, Submit } from "./formItems"
+import { Label, Input, TextArea, Submit } from "./formItems"
 import Map from "../map"
 
 class FormContact extends React.Component {
