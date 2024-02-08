@@ -11,7 +11,7 @@ import Commercial from "../../components/3dprintservices/commercial"
 import Materials from "../../components/3dprintservices/materials"
 import Design from "../../components/3dprintservices/design"
 import Process from "../../components/process"
-// import PrintingBenefits from "../../components/benefits/PrintingBenefits"
+import PrintingBenefits from "../../components/benefits/PrintingBenefits"
 import Accelerate from "../../components/3dprintservices/accelerate"
 // import Industries from "../../components/industries"
 
