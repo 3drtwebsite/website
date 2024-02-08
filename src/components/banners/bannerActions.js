@@ -39,11 +39,11 @@ export default function BannerActions(props) {
               <BreadcrumbLink to={props.breadCrumbLink1}>
                 {props.breadCrumb1}
               </BreadcrumbLink>
-              >
+              {'>'}
               <BreadcrumbLink to={props.breadCrumbLink2}>
                 {props.breadCrumb2}
               </BreadcrumbLink>
-              >
+              {'>'}
               <BreadcrumbLink to={props.breadCrumbLink3}>
                 {props.breadCrumb3}
               </BreadcrumbLink>

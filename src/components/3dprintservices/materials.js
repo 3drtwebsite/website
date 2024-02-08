@@ -153,7 +153,6 @@ export default function Materials() {
             materialImg1={PlasticImg1}
             materialImg2={PlasticImg2}
             materialAlt1="plastic 3D printing company Calgary"
-            materialAlt1="plastic 3D printing company Calgary"
             materialDescription="3D plastic printing represents the bulk of the current marketplace in 3D printing Calgary technologies. Current available platforms essentially fall into 1 of 2 categories based on the type of plastic they use ie. Thermoplastics (filaments), or Photo Reactive (resins). 3D plastic printing generally produces the most cost effective and high quality results with respect to 3D modeling, design, and form-fit testing applications, as well as large format 3D printing services Calgary, and low volume, high value production use cases."
             printerImg={PlasticPrinterImg}
             printerAlt="3D plastic printing company Calgary"
