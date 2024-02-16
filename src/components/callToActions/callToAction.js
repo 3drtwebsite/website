@@ -35,11 +35,11 @@ export default function CallToAction() {
               <TopP className="upper">got a project?</TopP>
               <h2 className="title italics bold">make IT real!</h2>
             </div>
-            <p className="bold">
+            <p className="bold body--large">
               Digital Manufacturing and fully scaled Production using 3D
               printing and AM is finally here!
             </p>
-            <p className="bold">
+            {/* <p className="bold">
               3’D Revolution Technologies (3DRT) specializes in using economical
               hybrid AM techniques, combined with our inhouse 3D printer
               ecosystem and post-processing methods, for rapid prototyping and
@@ -48,7 +48,7 @@ export default function CallToAction() {
               New Product Development process, from design/conception to mass
               production. Whatever you can imagine, we can help you Make it
               Real!{" "}
-            </p>
+            </p> */}
             {/* <p>
                 3’D Revolution Technologies (3DRT) specializes in using
                 economical hybrid AM techniques, combined with our inhouse 3D
