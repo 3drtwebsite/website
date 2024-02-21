@@ -8,6 +8,14 @@ module.exports = {
     siteUrl: `https://www.3drtinc.com`,
     image: "/images/logo.svg", // Path to your image you placed in the 'static' folder
     twitterUsername: "",
+    author: {
+      name: `Rob Thiessen`,
+      summary: `President at 3'D Revolution Technologies Inc.`,
+    },
+    social: {
+      linkedin: `www.linkedin.com/in/rob-thiessen-9619484/`
+
+    }
   },
   plugins: [
     `gatsby-plugin-sitemap`,
