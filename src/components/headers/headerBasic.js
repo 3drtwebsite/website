@@ -264,7 +264,7 @@ export default function HeaderBasic() {
                   <StyledLink to="/contact">contact</StyledLink>
                 </li>
                 <li>
-                  <StyledLink to="/blog">Blog</StyledLink>
+                  <StyledLink to="/">Blog</StyledLink>
                 </li>
                 {/* <li>
                   <GetQuote to="/contact">
