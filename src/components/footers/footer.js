@@ -17,6 +17,7 @@ import Instagram from "../../images/socials/instagram.svg"
 import Twitter from "../../images/socials/twitter.svg"
 import Linkedin from "../../images/socials/linkedin.svg"
 import Youtube from "../../images/socials/youtube.svg"
+import CalgaryBestRated from "../../images/CalgaryBestRatedLogo_Red.png"
 
 const device = {
   sm: "43em",
@@ -101,6 +102,10 @@ const FlexItem = styled.div`
         font-weight: var(--fw-500);
       }
     }
+  }
+  .calgary-best-badge {
+    width: 100px;
+    padding-top: 15px;"
   }
 `
 
@@ -222,6 +227,11 @@ export default function Footer() {
                   </a>
                 </div>
               </Socials>
+              <div class="calgary-best-badge">
+                <a target="blank" href="https://calgarybestrated.com/best-3d-printing-in-calgary/">
+                <img src={CalgaryBestRated} alt="Calgary's Best Rated Log Badge Red" />
+                </a>
+              </div>
             </FlexItem>
             <FlexItem>
               <p className="heading">quick links</p>

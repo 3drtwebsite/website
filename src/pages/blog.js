@@ -1,29 +1,75 @@
-import Layout from "../components/layout";
+import { Link, graphql } from "gatsby";
 import React from "react";
 import SEO from "../components/seo";
 import HeaderBasic from "../components/headers/headerBasic";
-export default function Blog() {
+import Footer from "../components/footers/footer";
+import BannerBlog from "../components/banners/bannerBlog";
+import { Section, Container, Flex } from "../components/layoutComponents";
+import * as styles from '../styles/blog.module.css';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import BannerImg from "../images/calgary-3d-fusion.jpg";
+
+export default function Blog({ data }) {
+    const blogs = data.allContentfulBlog.nodes
+
     return (
-        <Layout>
-            <SEO />
-            <HeaderBasic />
-            <div>
-                <h1>Recent News</h1>
-                <p>Written by Rob Thiessen</p>
-            </div>
-            <div>
-                
-                <h1 className="bold text-blue"> Blog 1</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <h1 className="bold"> Blog 2</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <h1 className="bold"> Blog 3</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <h1 className="bold"> Blog 4</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-
-
-        </Layout>
+        <>
+        <SEO />
+        <HeaderBasic />
+        <BannerBlog
+            breadCrumbLink1="/"
+            breadCrumbLink2="/blog"
+            breadCrumb1="Home"
+            breadCrumb2="Blog"
+            img={BannerImg}
+        />
+        <Section>
+            <Container>
+                    <div className="spacing">
+                        <h1 className="title center mb-5">Blog Posts</h1>
+                        <Flex>
+                            <div className={styles.blogPost}>
+                                {blogs.map(blog => (
+                                    <Link to={blog.slug} key={data.id}>
+                                        <div className={styles.blog}>
+                                            <div>
+                                                <GatsbyImage image={blog.image.gatsbyImageData} alt="Blog Post Image" />
+                                            </div>
+                                            <h2>{ blog.title }</h2>
+                                            <h4>{ blog.date }</h4>
+                                            <p>{ blog.description }</p>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </Flex>
+                    </div>
+            </Container>
+        </Section>
+        <Footer />
+    </>
     )
 }
+
+export const query = graphql`
+    query BlogPost {
+        allContentfulBlog(sort: {date: DESC}) {
+            nodes {
+                date(formatString: "MMMM D, YYYY")
+                title
+                slug
+                id
+                description
+                image {
+                    gatsbyImageData(
+                        layout: CONSTRAINED
+                        placeholder: BLURRED
+                        width: 424
+                        height: 212
+                      )
+                }
+            }
+        }
+    } 
+`
