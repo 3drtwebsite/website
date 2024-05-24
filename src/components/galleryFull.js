@@ -38,7 +38,7 @@ export default function GalleryFull() {
             placeHolder="blurred"
           />
           <StaticImage
-            src={"../images/gallery3d-fusion-bike.jpg"}
+            src={"../images/gallery/3d-fusion-bike.jpg"}
             alt="3D printing project"
             placeHolder="blurred"
           />
