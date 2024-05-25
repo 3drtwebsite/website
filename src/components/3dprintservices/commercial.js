@@ -5,7 +5,7 @@ import { Section, Container } from "../layoutComponents"
 import { ButtonInline } from "../buttons"
 
 const Wrapper = styled.div`
-  background: url("../../images/commercial-3d-printing-1.jpg");
+  background: url("../../images/commercial-3d-printing.jpg");
   background-size: cover;
   background-postition: center;
 `
