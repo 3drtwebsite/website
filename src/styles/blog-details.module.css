@@ -25,13 +25,13 @@
 .hrTag {
     opacity: 1;
 }
-a {
+.html a {
     display: inline;
 }
-ul li {
+.html ul li {
     margin-bottom: 0.5rem;
     list-style-type: disc;
 }
-li p {
+.html li p {
     margin-bottom: 0;
 }
