@@ -11,7 +11,8 @@ const BannerWrapper = styled.div`
   display: flex;
   justify-content: center;
   color: var(--txt-light);
-  background: url("../../images/3d-printing-lambo.jpg"), rgba(28, 109, 208, 0.5);
+  background: url("../../images/3d-printing-lambo-2.jpg"),
+    rgba(28, 109, 208, 0.5);
   background-blend-mode: overlay;
   background-position: top;
   padding: 10em 0 4em 0;
@@ -51,7 +52,7 @@ export default function BannerContact(props) {
             <BreadcrumbLink to={props.breadCrumbLink1}>
               {props.breadCrumb1}
             </BreadcrumbLink>
-            {'>'}
+            {">"}
             <BreadcrumbLink to={props.breadCrumbLink2}>
               {props.breadCrumb2}
             </BreadcrumbLink>

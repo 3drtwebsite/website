@@ -12,7 +12,7 @@ const TopP = styled.p`
 
 const Background = styled.div`
   min-height: 600px;
-  background: url("../images/3d-printing-lambo-2.jpg");
+  background: url("../images/3d-printing-lambo.jpg");
   background-position: left;
   padding: 12em 0 4em 0;
   background-size: cover;
