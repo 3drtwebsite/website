@@ -1,0 +1,5 @@
+[[redirects]]
+from = "/sitemap.xml"
+to = "/sitemap-0.xml"
+status = 301
+force = true
