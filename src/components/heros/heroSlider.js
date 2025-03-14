@@ -7,7 +7,7 @@ import videoSrc from "../videos/BackgroundVideo_3DRT.mp4"
 const Wrapper = styled.section`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   overflow: hidden;
 `
 
