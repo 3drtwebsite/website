@@ -28,6 +28,7 @@ const Overlay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100%;
   padding: 2rem;
   color: #fff;
@@ -60,14 +61,14 @@ export default function HeroSlider() {
         Your browser does not support the video tag.
       </VideoBackground>
       <Overlay>
-        <HeroTitle>3D Printing</HeroTitle>
+        <HeroTitle>Step into the Third Industrial Revolution</HeroTitle>
         <HeroSubtitle>
-          Our in-house rapid prototyping and digital production capabilities are
-          ready to meet your unique manufacturing challenges!
+        Empower your vision with advanced 3D printing, fusion manufacturing, and digital consulting and unlocking limitless 
+        design freedom and streamlined production for a sustainable, innovative future. Share your vision with us.
         </HeroSubtitle>
         <div style={{ display: "flex", gap: "1rem" }}>
-          <ButtonPrimary>Form Button</ButtonPrimary>
-          <ButtonSecondaryLight>Phone Button</ButtonSecondaryLight>
+          <ButtonPrimary>Contact Us</ButtonPrimary>
+          <ButtonSecondaryLight>Call Us</ButtonSecondaryLight>
         </div>
       </Overlay>
     </Wrapper>
