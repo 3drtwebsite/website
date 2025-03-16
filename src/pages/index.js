@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroSlider from "../components/heros/heroSlider"
 import ReviewSlider from "../components/ReviewSlider"
-import MaterialsBanner2 from "../components/materialsBanner2"
 import ServicesFull from "../components/servicesFull"
 import FeaturedGallery from "../components/featuredGallery"
 import Summary2Rpt from "../components/3dfusionservices/summary2Rpt"
@@ -19,7 +18,6 @@ export default function Index() {
       <SEO />
       <HeroSlider />
       <ReviewSlider />
-      <MaterialsBanner2 />
       <ServicesFull />
       {/* <FeaturedGallery /> */}
       <Process />
