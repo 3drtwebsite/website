@@ -8,12 +8,11 @@ import { AnchorPrimary } from "../buttons"
 import { BsArrowRight } from "react-icons/bs"
 
 const BannerWrapper = styled.div`
+  min-height: 55vh;
   display: flex;
   justify-content: center;
   color: var(--txt-light);
-  background: url("../../images/3d-printing-lambo-2.jpg"),
-    rgba(28, 109, 208, 0.5);
-  background-blend-mode: overlay;
+  background: url("../../images/3d-printing-lambo-2.jpg");
   background-position: top;
   padding: 10em 0 4em 0;
 
