@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { ButtonPrimary, ButtonSecondaryLight } from "../buttons"
 import "bootstrap/dist/css/bootstrap.min.css"
 import videoSrc from "../videos/BackgroundVideo_3DRT.mp4"
+import { Link } from "gatsby"
 
 const Wrapper = styled.section`
   position: relative;
@@ -67,8 +68,8 @@ export default function HeroSlider() {
         design freedom and streamlined production for a sustainable, innovative future. Share your vision with us.
         </HeroSubtitle>
         <div style={{ display: "flex", gap: "1rem" }}>
-          <ButtonPrimary>Contact Us</ButtonPrimary>
-          <ButtonSecondaryLight>Call Us</ButtonSecondaryLight>
+        <ButtonPrimary as={Link} to="/contact">Contact Us</ButtonPrimary>
+        <ButtonSecondaryLight as="a" href="tel:403-874-3131">Call Us</ButtonSecondaryLight>
         </div>
       </Overlay>
     </Wrapper>
