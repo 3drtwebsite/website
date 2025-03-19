@@ -12,6 +12,8 @@ import CallToAction from "../components/callToActions/callToAction"
 import BannerImg from "../images/digital-revolution.jpg"
 import AboutImg from "../images/rob-thiessen-headshot.jpg"
 import CtaImg from "../images/ph.png"
+import expandedVideo from "../components/videos/ExpandedVideo_3DRT.mp4"
+
 
 export default function About() {
   return (
@@ -32,8 +34,8 @@ export default function About() {
         img={BannerImg}
       />
       <Bio
-        textPrimary="3’D revolution Technologies"
-        textSecondary="3’D Revolution Technologies provides best in class 3D Printing, 3D design, production consulting, and technology sales. We recognize that the Third Industrial Revolution, which began with the digital age, is accelerating and we want to assist others in their efforts to engage and embrace the technologies currently redefining the industrial landscape.We believe these technologies offer abundant opportunity for sustainable, distributed, and democratic growth."
+        textPrimary="3’D Revolution Technologies"
+        textSecondary="3’D Revolution Technologies provides best in class 3D Printing, 3D design, production consulting, and technology sales. We recognize that the Third Industrial Revolution, which began with the digital age, is accelerating and we want to assist others in their efforts to engage and embrace the technologies currently redefining the industrial landscape. We believe these technologies offer abundant opportunity for sustainable, distributed, and democratic growth."
         li1="Increase your design freedom"
         li2="Increase the value of your products"
         li3="Reduce production turnaround time"
@@ -80,6 +82,29 @@ export default function About() {
           </div>
         </Container>
       </Section>
+
+
+      <Section>
+        <Container className="spacing">
+          <h2 className="title">
+            The 3D Revolution in Post Industrial Manufacturing
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <video
+              controls
+              width="100%"
+              style={{ maxWidth: "600px", marginBottom: "1rem" }}
+            >
+              <source src={expandedVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p className="body">
+              Our advanced 3D printing systems aren’t just for rapid prototyping—they’re a catalyst for post-industrial manufacturing. By integrating digital design with automated production processes, we’re creating sustainable, efficient solutions that redefine manufacturing as we know it.
+            </p>
+          </div>
+        </Container>
+      </Section>
+
       <Statements />
       <CallToAction img={CtaImg} />
     </Layout>

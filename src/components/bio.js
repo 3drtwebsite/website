@@ -28,7 +28,7 @@ const List = styled.ul`
 const ImgWrapper = styled.div`
   img {
     object-fit: cover;
-    height: 500px;
+    height: 350px;
   }
 
   p {
