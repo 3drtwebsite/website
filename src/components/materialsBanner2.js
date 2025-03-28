@@ -4,6 +4,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { Section, Container } from "./layoutComponents"
 
+{/* This is old code for a block that was desided at the time to remove as materials.js fills the same requriment, this was done on 2025/03/28 */}
+
 const device = {
   md: "48em",
 }
