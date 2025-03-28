@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroSlider from "../components/heros/heroSlider"
-import MaterialsBanner2 from "../components/materialsBanner2"
+import ReviewSlider from "../components/ReviewSlider"
 import ServicesFull from "../components/servicesFull"
 import FeaturedGallery from "../components/featuredGallery"
 import Summary2Rpt from "../components/3dfusionservices/summary2Rpt"
@@ -17,7 +17,7 @@ export default function Index() {
     <Layout>
       <SEO />
       <HeroSlider />
-      <MaterialsBanner2 />
+      <ReviewSlider />
       <ServicesFull />
       {/* <FeaturedGallery /> */}
       <Process />

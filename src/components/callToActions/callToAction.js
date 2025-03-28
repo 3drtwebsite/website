@@ -12,7 +12,9 @@ const TopP = styled.p`
 
 const Background = styled.div`
   min-height: 600px;
-  background: url("../images/3d-printing-lambo.jpg");
+  background: url("../images/3d-printing-lambo.jpg"),
+    rgba(28, 109, 208, 0.5);
+  background-blend-mode: overlay;
   background-position: left;
   padding: 12em 0 4em 0;
   background-size: cover;
@@ -36,8 +38,8 @@ export default function CallToAction() {
               <h2 className="title italics bold">make IT real!</h2>
             </div>
             <p className="bold body--large">
-              Digital Manufacturing and fully scaled Production using 3D
-              printing and AM is finally here!
+              We use 3D Printing combined with other novel and specialized AM methods to  
+              <b><br/>make just about anything you can imagine!</b>
             </p>
             {/* <p className="bold">
               3’D Revolution Technologies (3DRT) specializes in using economical

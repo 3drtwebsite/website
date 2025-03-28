@@ -3,6 +3,11 @@ import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { Section, Container, Flex, GridAuto } from "./layoutComponents"
 
+import review1 from "../images/review-1.jpg"
+import review2 from "../images/review-2.jpg"
+
+{/*This is old code, no longer used as of 2025/03/28*/}
+
 const ReviewCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +20,7 @@ const ReviewCard = styled.div`
   }
 
   &:nth-child(1) {
-    background: url("../images/review-1.jpg");
+    background: url(${review1}) center/cover no-repeat;;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,7 +29,7 @@ const ReviewCard = styled.div`
   }
   &:nth-child(2) {
     
-    background: url("../images/review-2.jpg");
+    background: url(${review2}) center/cover no-repeat;;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -36,7 +41,7 @@ const ReviewCard = styled.div`
 export default function Reviews() {
   return (
     <Section className="spacing">
-      <h2 className="title center">customer reviews</h2>
+      <h2 className="title center">Testimonials</h2>
       <Container className="spacing">
         <Flex>
           <ReviewCard>

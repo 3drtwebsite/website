@@ -19,6 +19,7 @@ import BannerImg from "../../images/3d-printing-calgary.png"
 import BenefitsImg from "../../images/calgary-3d-printing.jpg"
 import CtaImg from "../../images/ph.png"
 
+
 export default function Printing() {
   return (
     <Layout>
@@ -35,10 +36,9 @@ export default function Printing() {
         breadCrumb3="3D Printing"
         img={BannerImg}
         textPrimary="3D printing calgary"
-        textSecondary="3'D Revolution Technologies offers an extensive list of affordable 3D
-        printing services Calgary. We've also developed some of our own
-        innovative processes to help you Make It Real! Our 3D printing services include Rapid Prototyping and Production
-        printing on FDM, ADM, CFF, CJP, DMP, MJP, SLA, SLS printer platforms."
+        textSecondary="We combine a variety of Open Source and Industrial 3D Printing platforms, with Hybrid AM
+        techniques such as 3D Fusion Manufacturing, to achieve results that are remarkable, and yet
+        affordable!"
         to="/contact"
         buttonText="get a quote"
       />
