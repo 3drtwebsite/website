@@ -15,8 +15,6 @@ import PrintingBenefits from "../../components/benefits/PrintingBenefits"
 import Accelerate from "../../components/3dprintservices/accelerate"
 import Industries from "../../components/industries"
 
-import MaterialsBanner2 from "../../components/materialsBanner2"
-
 import BannerImg from "../../images/3d-printing-calgary.png"
 import BenefitsImg from "../../images/calgary-3d-printing.jpg"
 import CtaImg from "../../images/ph.png"
