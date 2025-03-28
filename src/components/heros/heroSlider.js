@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import videoSrc from "../videos/BackgroundVideo_3DRT.mp4"
 import { Link } from "gatsby"
 
+import CanadaFlag from "../../images/canada.png"
+
 const Wrapper = styled.section`
   position: relative;
   width: 100%;
@@ -33,12 +35,43 @@ const Overlay = styled.div`
   height: 100%;
   padding: 2rem;
   color: #fff;
-  text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.7);
   background: rgba(0, 0, 0, 0.3);
+    text-shadow: -3px 3px 3px #000000;
+  p {
+    color: var(--txt-light);
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+  }
+
+  ul {
+    padding: 0;
+    margin: var(--spacer) 0;
+    list-style-type: none;
+    li {
+      font-size: var(--fs-sm);
+      text-transform: uppercase;
+
+      &::before {
+        content: "✓";
+        color: var(--clr-accent);
+        font-size: 1.2em;
+        margin-right: 0.8rem;
+      }
+    }
+  }
 `
 
 const HeroTitle = styled.h1`
   font-size: var(--fs-title);
+  margin-bottom: 0rem;
+  text-transform: uppercase;
+`
+
+const HeroUndertitle = styled.h1`
+  font-size: var(--fs-2);
   margin-bottom: 1rem;
   text-transform: uppercase;
 `
@@ -62,11 +95,14 @@ export default function HeroSlider() {
         Your browser does not support the video tag.
       </VideoBackground>
       <Overlay>
-        <HeroTitle>Step into the Third Industrial Revolution</HeroTitle>
+        <HeroTitle>Step into the Third Industrial Revolution!</HeroTitle>
+        <HeroUndertitle>Advanced 3D Printing, Digital Design, and 3D Fusion Manufacturing</HeroUndertitle>
         <HeroSubtitle>
-        Empower your vision with advanced 3D printing, fusion manufacturing, and digital consulting and unlocking limitless 
-        design freedom and streamlined production for a sustainable, innovative future. Share your vision with us.
+        Want to build a functional prototype or replacement part?  ...We can help with that!
+        <br></br> 
+        Want to make it real in Canada? ...We make everything in Canada! 
         </HeroSubtitle>
+        <img src={CanadaFlag} alt="Canadian Flag" style={{ width: "3.8em", height: "2.2em", marginBottom: "1.5rem"}}/>
         <div style={{ display: "flex", gap: "1rem" }}>
         <ButtonPrimary as={Link} to="/contact">Contact Us</ButtonPrimary>
         <ButtonSecondaryLight as="a" href="tel:403-874-3131">Call Us</ButtonSecondaryLight>
