@@ -6,6 +6,7 @@ import { Section, Container, Flex, GridAuto } from "./layoutComponents"
 import review1 from "../images/review-1.jpg"
 import review2 from "../images/review-2.jpg"
 
+{/*This is old code, no longer used as of 2025/03/28*/}
 
 const ReviewCard = styled.div`
   display: flex;
