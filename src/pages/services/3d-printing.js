@@ -57,7 +57,6 @@ export default function Printing() {
         img={BenefitsImg}
         imgAlt="3D printing calgary"
       />
-      <MaterialsBanner2 />
       <OnDemandPrinting />
       <Technologies />
       <Commercial />
