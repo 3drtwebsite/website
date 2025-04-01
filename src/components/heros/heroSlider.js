@@ -33,7 +33,7 @@ const Overlay = styled.div`
   align-items: center;
   text-align: center;
   height: 100%;
-  padding: 2rem;
+  padding: 8rem 2rem 2rem 2rem;
   color: #fff;
   background: rgba(0, 0, 0, 0.3);
     text-shadow: -3px 3px 3px #000000;
