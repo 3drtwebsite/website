@@ -67,19 +67,16 @@ const Overlay = styled.div`
 const HeroTitle = styled.h1`
   font-size: var(--fs-title);
   margin-bottom: 0rem;
-  text-transform: uppercase;
 `
 
 const HeroUndertitle = styled.h1`
   font-size: var(--fs-2);
   margin-bottom: 1rem;
-  text-transform: uppercase;
 `
 
 const HeroSubtitle = styled.p`
   font-size: var(--fs-3);
   margin-bottom: 1.5rem;
-  text-transform: uppercase;
 `
 
 export default function HeroSlider() {
