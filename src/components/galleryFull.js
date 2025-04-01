@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
-// Grid container for thumbnails
+
 const GridAuto = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -13,7 +13,7 @@ const GridAuto = styled.div`
   padding: 2rem;
 `;
 
-// Modal overlay for the lightbox
+
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -27,7 +27,7 @@ const ModalOverlay = styled.div`
   z-index: 1000;
 `;
 
-// Modal content container with flex layout
+
 const ModalContent = styled.div`
   position: relative;
   display: flex;
@@ -38,19 +38,21 @@ const ModalContent = styled.div`
   overflow: visible; /* Allow arrows and close button to appear outside */
 `;
 
-// Wrapper for the enlarged image
+
 const ImageWrapper = styled.div`
   position: relative;
   z-index: 1; /* Ensures the image is behind the buttons */
 `;
 
-// Styled GatsbyImage for the enlarged image
+
 const StyledGatsbyImage = styled(GatsbyImage)`
   max-height: 90vh;
+  max-width: 90vw;
+  width: auto;
   display: block;
 `;
 
-// Close button, positioned outside the top-right corner
+
 const CloseButton = styled.button`
   position: absolute;
   top: 1rem;
@@ -63,7 +65,7 @@ const CloseButton = styled.button`
   z-index: 999;
 `;
 
-// Shared styling for arrow buttons
+
 const ArrowButton = styled.button`
   background: transparent;
   border: none;
@@ -74,23 +76,25 @@ const ArrowButton = styled.button`
   padding: 0.5rem;
 `;
 
-// Left arrow, shifted to appear outside the left edge
 const LeftArrow = styled(ArrowButton)`
   margin-right: 1rem;
   transform: translateX(-3rem);
 `;
 
-// Right arrow, shifted to appear outside the right edge
 const RightArrow = styled(ArrowButton)`
   margin-left: 1rem;
   transform: translateX(3rem);
 `;
 
 export default function GalleryFull() {
-  // GraphQL query to fetch images from src/images/gallery
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
+    allFile(
+      filter: { 
+        relativeDirectory: { eq: "gallery" },
+        childImageSharp: { original: { width: { gte: 600 } } }
+      }
+    ) {
         nodes {
           id
           name
@@ -110,28 +114,23 @@ export default function GalleryFull() {
 
   const images = data.allFile.nodes;
 
-  // State to manage lightbox visibility and current image index
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
-  // Open the lightbox modal for the given image index
   const openModal = (index) => {
     setPhotoIndex(index);
     setIsOpen(true);
   };
 
-  // Close the lightbox modal
   const closeModal = () => {
     setIsOpen(false);
   };
 
-  // Show the previous image
   const showPrev = (e) => {
     e.stopPropagation();
     setPhotoIndex((photoIndex + images.length - 1) % images.length);
   };
 
-  // Show the next image
   const showNext = (e) => {
     e.stopPropagation();
     setPhotoIndex((photoIndex + 1) % images.length);
@@ -151,8 +150,8 @@ export default function GalleryFull() {
               <GatsbyImage
                 image={imageData}
                 alt={`Gallery image ${file.name}`}
-                style={{ backgroundColor: "transparent" }}
-                imgStyle={{ backgroundColor: "transparent" }}
+                style={{ backgroundColor: "transparent", height: "auto" }}
+                imgStyle={{ backgroundColor: "transparent", objectFit: "contain" }}
               />
             </div>
           );
@@ -165,12 +164,12 @@ export default function GalleryFull() {
             <LeftArrow onClick={showPrev}>&lt;</LeftArrow>
 
             <ImageWrapper>
-              <StyledGatsbyImage
-                image={getImage(
-                  images[photoIndex].childImageSharp.gatsbyImageData
-                )}
-                alt={`Gallery image ${images[photoIndex].name}`}
-              />
+                <StyledGatsbyImage
+                  image={getImage(images[photoIndex].childImageSharp.gatsbyImageData)}
+                  alt={`Gallery image ${images[photoIndex].name}`}
+                  style={{ backgroundColor: "transparent" }}
+                  imgStyle={{ objectFit: "contain", backgroundColor: "transparent" }}
+                />
             </ImageWrapper>
 
             <RightArrow onClick={showNext}>&gt;</RightArrow>
