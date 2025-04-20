@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import styled from "styled-components";
-
+import React, { useState } from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import styled from "styled-components"
 
 const GridAuto = styled.div`
   display: grid;
@@ -11,8 +10,16 @@ const GridAuto = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-`;
 
+  & > div {
+    width: 250px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -25,8 +32,7 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
-`;
-
+`
 
 const ModalContent = styled.div`
   position: relative;
@@ -35,36 +41,32 @@ const ModalContent = styled.div`
   justify-content: center;
   max-width: 90%;
   max-height: 90%;
-  overflow: visible; /* Allow arrows and close button to appear outside */
-`;
-
+  overflow: visible;
+`
 
 const ImageWrapper = styled.div`
   position: relative;
-  z-index: 1; /* Ensures the image is behind the buttons */
-`;
-
+  z-index: 1;
+`
 
 const StyledGatsbyImage = styled(GatsbyImage)`
   max-height: 90vh;
   max-width: 90vw;
   width: auto;
   display: block;
-`;
-
+`
 
 const CloseButton = styled.button`
   position: absolute;
   top: 1rem;
-  right: -3rem; /* Shift it outside the container */
+  right: -3rem;
   background: transparent;
   border: none;
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
   z-index: 999;
-`;
-
+`
 
 const ArrowButton = styled.button`
   background: transparent;
@@ -74,110 +76,106 @@ const ArrowButton = styled.button`
   cursor: pointer;
   z-index: 999;
   padding: 0.5rem;
-`;
+`
 
 const LeftArrow = styled(ArrowButton)`
   margin-right: 1rem;
   transform: translateX(-3rem);
-`;
+`
 
 const RightArrow = styled(ArrowButton)`
   margin-left: 1rem;
   transform: translateX(3rem);
-`;
+`
 
 export default function GalleryFull() {
-  const data = useStaticQuery(graphql`
+  const { allFile: { nodes: images } } = useStaticQuery(graphql`
     query {
-    allFile(
-      filter: { 
-        relativeDirectory: { eq: "gallery" },
-        childImageSharp: { original: { width: { gte: 600 } } }
-      }
-    ) {
+      allFile(
+        filter: {
+          relativeDirectory: { eq: "gallery" },
+          childImageSharp: { original: { width: { gte: 600 } } }
+        }
+      ) {
         nodes {
           id
           name
           childImageSharp {
-            gatsbyImageData(
-              width: 600
+            thumb: gatsbyImageData(
+              width: 300
+              height: 200
+              layout: FIXED
               placeholder: NONE
-              layout: CONSTRAINED
-              backgroundColor: "transparent"
-              formats: [AUTO, WEBP]
+              transformOptions: { fit: COVER, cropFocus: CENTER }
             )
           }
+          publicURL
         }
       }
     }
-  `);
+  `)
+  
 
-  const images = data.allFile.nodes;
+  const [isOpen, setIsOpen] = useState(false)
+  const [photoIndex, setPhotoIndex] = useState(0)
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
-
-  const openModal = (index) => {
-    setPhotoIndex(index);
-    setIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-
-  const showPrev = (e) => {
-    e.stopPropagation();
-    setPhotoIndex((photoIndex + images.length - 1) % images.length);
-  };
-
-  const showNext = (e) => {
-    e.stopPropagation();
-    setPhotoIndex((photoIndex + 1) % images.length);
-  };
+  const openModal = index => {
+    setPhotoIndex(index)
+    setIsOpen(true)
+  }
+  const closeModal = () => setIsOpen(false)
+  const showPrev = e => {
+    e.stopPropagation()
+    setPhotoIndex((photoIndex + images.length - 1) % images.length)
+  }
+  const showNext = e => {
+    e.stopPropagation()
+    setPhotoIndex((photoIndex + 1) % images.length)
+  }
 
   return (
     <>
       <GridAuto>
-        {images.map((file, index) => {
-          const imageData = getImage(file.childImageSharp.gatsbyImageData);
+        {images.map((file, idx) => {
+          const thumbImg = getImage(file.childImageSharp.thumb)
           return (
-            <div
-              key={file.id}
-              onClick={() => openModal(index)}
-              style={{ cursor: "pointer" }}
-            >
+            <div key={file.id} onClick={() => openModal(idx)} style={{ cursor: "pointer" }}>
               <GatsbyImage
-                image={imageData}
-                alt={`Gallery image ${file.name}`}
-                style={{ backgroundColor: "transparent", height: "auto" }}
-                imgStyle={{ backgroundColor: "transparent", objectFit: "contain" }}
+                image={thumbImg}
+                alt={file.name}
+                imgStyle={{
+                    objectFit: "cover",
+                    objectPosition: "center center"
+                }}
               />
             </div>
-          );
+          )
         })}
       </GridAuto>
 
       {isOpen && (
         <ModalOverlay onClick={closeModal}>
-          <ModalContent onClick={(e) => e.stopPropagation()}>
+          <ModalContent onClick={e => e.stopPropagation()}>
             <LeftArrow onClick={showPrev}>&lt;</LeftArrow>
-
             <ImageWrapper>
-                <StyledGatsbyImage
-                  image={getImage(images[photoIndex].childImageSharp.gatsbyImageData)}
-                  alt={`Gallery image ${images[photoIndex].name}`}
-                  style={{ backgroundColor: "transparent" }}
-                  imgStyle={{ objectFit: "contain", backgroundColor: "transparent" }}
-                />
+            <img
+              src={images[photoIndex].publicURL}
+              alt={images[photoIndex].name}
+              style={{
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+
             </ImageWrapper>
-
             <RightArrow onClick={showNext}>&gt;</RightArrow>
-
             <CloseButton onClick={closeModal}>&times;</CloseButton>
           </ModalContent>
         </ModalOverlay>
       )}
     </>
-  );
+  )
 }
+
